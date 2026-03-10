@@ -6,7 +6,6 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8.svg)](https://tailwindcss.com/)
-[![pnpm](https://img.shields.io/badge/pnpm-Package_Manager-f69220.svg)](https://pnpm.io/)
 
 **A showcase platform for proof-of-concept projects exploring AI and ML applications in insurance**
 
