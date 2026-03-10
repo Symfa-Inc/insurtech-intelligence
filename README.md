@@ -1,6 +1,20 @@
+<div align="center">
+
 # InsurTech Intelligence
 
-A collection of proof-of-concept projects exploring **AI and ML applications in insurance** — from document processing and fraud detection to predictive analytics and time-series forecasting.
+[![Next.js](https://img.shields.io/badge/Next.js-16-black.svg)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8.svg)](https://tailwindcss.com/)
+[![pnpm](https://img.shields.io/badge/pnpm-Package_Manager-f69220.svg)](https://pnpm.io/)
+
+**A showcase platform for proof-of-concept projects exploring AI and ML applications in insurance**
+
+💻 **GitHub**: [https://github.com/Symfa-Inc/insurtech-intelligence](https://github.com/Symfa-Inc/insurtech-intelligence)
+
+📘 **Confluence**: [https://symfa.atlassian.net/wiki/spaces/SYMFA/pages/5012094984](https://symfa.atlassian.net/wiki/spaces/SYMFA/pages/5012094984)
+
+</div>
 
 ## Projects
 
