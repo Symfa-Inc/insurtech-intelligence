@@ -1,8 +1,7 @@
 export function Hero() {
   return (
-    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-6">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
+    <section className="flex min-h-[80vh] items-center justify-center px-6">
+      <div className="mx-auto max-w-4xl text-center">
         <div className="mb-6 inline-block rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-text-secondary">
           AI-Powered Insurance Solutions
         </div>
