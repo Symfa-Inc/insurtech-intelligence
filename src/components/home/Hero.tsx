@@ -1,19 +1,22 @@
 export function Hero() {
   return (
-    <section className="flex min-h-[80vh] items-center justify-center px-6">
-      <div className="mx-auto max-w-4xl text-center">
-        <div className="mb-6 inline-block rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-text-secondary">
+    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-6">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.07] blur-[120px]" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="animate-fade-in-up mb-6 inline-block rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-text-secondary">
           AI-Powered Insurance Solutions
         </div>
-        <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+        <h1 className="animate-fade-in-up animation-delay-100 mb-6 text-5xl font-extrabold leading-[1.1] tracking-tight md:text-7xl">
           Intelligence That <span className="text-primary">Transforms</span> Insurance
         </h1>
-        <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
+        <p className="animate-fade-in-up animation-delay-200 mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
           From claim processing to fraud detection, predictive pricing to forecasting — we build
           production-ready AI solutions for the insurance industry. Explore our proof-of-concept
           demos below.
         </p>
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="animate-fade-in-up animation-delay-300 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#projects"
             className="rounded-full bg-primary px-8 py-3 font-medium text-background transition-colors hover:bg-primary-hover"
