@@ -1,0 +1,53 @@
+{
+  "slug": "insurance-pricing",
+  "name": "Insurance Pricing",
+  "shortDescription": "Predictive pricing model that estimates annual insurance charges with transparent SHAP explanations and LLM-powered interpretation of each prediction.",
+  "tags": ["Regression", "AutoML", "Explainable AI", "SHAP"],
+  "demoUrl": "#",
+  "thumbnail": "/images/projects/insurance-pricing/thumbnail.webp",
+  "overview": {
+    "problem": "Insurance pricing requires balancing actuarial accuracy with customer transparency. Traditional black-box models produce estimates without explaining why, making it difficult for both underwriters and customers to understand pricing decisions.",
+    "solution": "Insurance Pricing combines an AutoGluon regression ensemble with SHAP explainability and LLM-powered interpretation. Every prediction comes with a breakdown of which factors (age, BMI, smoking status, etc.) drove the price up or down, plus a plain-English explanation.",
+    "outcomes": [
+      "Accurate annual charge predictions using ensemble of GBM, XGBoost, CatBoost, and Random Forest",
+      "Per-prediction SHAP feature impact visualization showing positive and negative drivers",
+      "LLM-generated plain-English interpretation with fallback to rule-based explanations",
+      "Extrapolation detection that warns when inputs fall outside training data range"
+    ]
+  },
+  "models": [
+    {
+      "name": "AutoGluon TabularPredictor",
+      "purpose": "Insurance charge regression from customer profile features",
+      "details": "Ensemble of GBM, XGBoost, CatBoost, Random Forest, and Extra Trees with regularized hyperparameters, 5-fold bagging, and MAPE optimization. Trained on 6 features with engineered interactions (smoker×BMI, age×BMI)."
+    },
+    {
+      "name": "SHAP TreeExplainer",
+      "purpose": "Feature contribution explanations for tree-based models",
+      "details": "Uses TreeExplainer for tree-based models with KernelExplainer fallback. Returns top 8 features by absolute SHAP value per prediction."
+    },
+    {
+      "name": "OpenAI GPT-4o-mini",
+      "purpose": "Human-readable prediction interpretation",
+      "details": "Generates structured interpretation with headline and bullet points explaining key pricing factors. Falls back to rule-based interpretation for robustness."
+    }
+  ],
+  "techStack": [
+    { "category": "Backend", "items": ["Python 3.13", "FastAPI", "Uvicorn", "Pydantic"] },
+    {
+      "category": "Frontend",
+      "items": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS"]
+    },
+    {
+      "category": "ML/AI",
+      "items": ["AutoGluon 1.5", "SHAP 0.49", "scikit-learn", "OpenAI API"]
+    },
+    { "category": "Data Processing", "items": ["Pandas", "NumPy", "SciPy", "joblib"] }
+  ],
+  "data": {
+    "sources": "US Health Insurance Dataset — 1,300 records with 6 features: age (18-64), sex, BMI (15-53), number of children (0-6), smoker status, and US region (northeast, northwest, southeast, southwest). Target: annual insurance charges in dollars.",
+    "methodology": "Preprocessing: Winsorization (IQR 1.5x) for BMI/charges outliers, log1p transformation on target, StandardScaler on age/BMI, one-hot encoding for region, binary encoding for sex/smoker, feature interactions (smoker×BMI, age×BMI). Stratified 80/20 train/test split by smoker and region. AutoGluon training with 300s time limit and 5-fold bagging.",
+    "metrics": "Evaluation metrics: R², MAPE (Mean Absolute Percentage Error), and SMAPE. MAPE used as primary optimization target."
+  },
+  "screenshots": []
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "insurecast",
+  "name": "InsureCast",
+  "shortDescription": "Workers' compensation forecasting dashboard with SARIMAX time-series models, scenario analysis, and multi-dimensional segmentation across states, industries, and claim types.",
+  "tags": ["Time-Series", "Forecasting", "Scenario Analysis"],
+  "demoUrl": "#",
+  "thumbnail": "/images/projects/insurecast/thumbnail.webp",
+  "overview": {
+    "problem": "Insurance companies need accurate claims forecasts to set reserves, price policies, and plan resources. Manual forecasting is slow, doesn't account for seasonality, and can't easily model 'what-if' scenarios across multiple business dimensions.",
+    "solution": "InsureCast applies SARIMAX time-series models to historical OSHA injury data, producing 12-month claims and cost forecasts with confidence intervals. Users can segment by state, industry, and claim type, and run scenario analyses with frequency and severity adjustments.",
+    "outcomes": [
+      "12-month claims count and cost forecasts with widening confidence intervals",
+      "Multi-dimensional filtering: 50+ states, 3 industries, 3 claim types",
+      "Interactive scenario analysis with frequency shocks (±10-25%) and severity inflation (0-20%)",
+      "Dynamic cost modeling using lognormal severity distributions with state/industry/type adjustments"
+    ]
+  },
+  "models": [
+    {
+      "name": "SARIMAX",
+      "purpose": "Seasonal time-series forecasting of monthly claims counts",
+      "details": "Order (1,1,1) with seasonal order (1,1,1,12) capturing 12-month seasonality. Trained on historical data from 2015 onwards. Achieves MAE: 8.4, RMSE: 10.7, MAPE: 6.2%."
+    },
+    {
+      "name": "Lognormal Severity Model",
+      "purpose": "Cost estimation per claim based on segment characteristics",
+      "details": "Lognormal distribution (μ=8.55, σ=0.72) with base cost $7,200, adjusted by state factor (e.g., CA=1.15, NY=1.2), industry factor (Construction=1.25), and claim type factor (LostTime=1.25). Includes 3% annual inflation and ±2% monthly seasonality."
+    }
+  ],
+  "techStack": [
+    { "category": "Backend", "items": ["Python 3.13", "FastAPI", "Uvicorn", "Pydantic"] },
+    {
+      "category": "Frontend",
+      "items": ["Next.js 16", "React 19", "TypeScript", "Recharts", "Tailwind CSS"]
+    },
+    { "category": "ML/AI", "items": ["SARIMAX", "Lognormal distributions"] },
+    { "category": "Data Processing", "items": ["Pandas", "NumPy"] }
+  ],
+  "data": {
+    "sources": "OSHA Severe Injury Reports (SIR) — public occupational injury incident reports from the Bureau of Labor Statistics. Data normalized into monthly claim counts by state, industry (Manufacturing, Construction, Healthcare), and claim type (LostTime, MedicalOnly, Indemnity).",
+    "methodology": "OSHA data ingested and aggregated by month/state/industry/claim_type. NAICS codes mapped to industry categories, event types mapped to claim types. Missing month-segment combinations filled with synthetic data sampled from segment-specific distributions. Severity parameters computed per segment with lognormal fitting. SARIMAX models fit with 12-month seasonal period.",
+    "metrics": "SARIMAX performance: MAE 8.4, RMSE 10.7, MAPE 6.2%. Forecast horizon: 12 months with confidence intervals widening over time."
+  },
+  "screenshots": []
+}
