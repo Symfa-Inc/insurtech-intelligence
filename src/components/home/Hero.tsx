@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-6">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.07] blur-[120px]" />
+        <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.03] blur-[120px]" />
       </div>
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <div className="animate-fade-in-up mb-6 inline-block rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-text-secondary">
