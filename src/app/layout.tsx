@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeScript } from '@/components/layout/ThemeScript';
+import { SITE_NAME, COMPANY_NAME, LOGO_PATH } from '@/lib/constants';
 import './globals.css';
 
 const geistSans = Geist({
@@ -15,30 +16,31 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const title = `${SITE_NAME} | ${COMPANY_NAME}`;
+const description =
+  'Explore AI-powered insurance solutions: claim processing, fraud detection, predictive pricing, and forecasting. Built by Symfa.';
+
 export const metadata: Metadata = {
-  title: 'InsurTech Intelligence | Symfa',
-  description:
-    'Explore AI-powered insurance solutions: claim processing, fraud detection, predictive pricing, and forecasting. Built by Symfa.',
+  title,
+  description,
   openGraph: {
-    title: 'InsurTech Intelligence | Symfa',
-    description:
-      'AI-powered insurance solutions — claim processing, fraud detection, predictive pricing, and forecasting.',
+    title,
+    description,
     type: 'website',
     images: [
       {
-        url: '/images/logo/symfa.webp',
+        url: LOGO_PATH,
         width: 1200,
         height: 630,
-        alt: 'InsurTech Intelligence - AI-Powered Insurance Solutions by Symfa',
+        alt: `${SITE_NAME} - AI-Powered Insurance Solutions by ${COMPANY_NAME}`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'InsurTech Intelligence | Symfa',
-    description:
-      'AI-powered insurance solutions — claim processing, fraud detection, predictive pricing, and forecasting.',
-    images: ['/images/logo/symfa.webp'],
+    title,
+    description,
+    images: [LOGO_PATH],
   },
 };
 

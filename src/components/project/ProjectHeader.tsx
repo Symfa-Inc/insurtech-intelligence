@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import type { Project } from '@/lib/types';
+import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
 
 export function ProjectHeader({ project }: { project: Project }) {
   return (
@@ -18,27 +20,19 @@ export function ProjectHeader({ project }: { project: Project }) {
         </nav>
         <div className="mb-6 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
-            >
+            <Badge key={tag} size="md">
               {tag}
-            </span>
+            </Badge>
           ))}
         </div>
         <h1 className="mb-6 text-4xl font-bold md:text-5xl">{project.name}</h1>
         <p className="mb-8 max-w-3xl text-lg leading-relaxed text-text-secondary">
           {project.shortDescription}
         </p>
-        <a
-          href={project.demoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-background transition-colors hover:bg-primary-hover"
-        >
+        <Button href={project.demoUrl} target="_blank" rel="noopener noreferrer">
           Try Live Demo
           <span aria-hidden="true">&rarr;</span>
-        </a>
+        </Button>
       </div>
     </section>
   );

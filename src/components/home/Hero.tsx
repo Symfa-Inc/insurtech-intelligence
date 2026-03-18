@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/Button';
+
 export function Hero() {
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-6">
@@ -12,23 +14,15 @@ export function Hero() {
           Intelligence That <span className="text-primary">Transforms</span> Insurance
         </h1>
         <p className="animate-fade-in-up animation-delay-200 mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
-          From claim processing to fraud detection, predictive pricing to forecasting — we build
+          From claim processing to fraud detection, predictive pricing to forecasting -we build
           production-ready AI solutions for the insurance industry. Explore our proof-of-concept
           demos below.
         </p>
         <div className="animate-fade-in-up animation-delay-300 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#projects"
-            className="rounded-full bg-primary px-8 py-3 font-medium text-background transition-colors hover:bg-primary-hover"
-          >
-            Explore Projects
-          </a>
-          <a
-            href="#contact"
-            className="rounded-full border border-border px-8 py-3 font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
-          >
+          <Button href="#projects">Explore Projects</Button>
+          <Button href="#contact" variant="secondary">
             Get in Touch
-          </a>
+          </Button>
         </div>
       </div>
     </section>

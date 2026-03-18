@@ -1,5 +1,5 @@
 import type { Project } from '@/lib/types';
-import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
 
 export function DemoCTA({ project }: { project: Project }) {
   return (
@@ -10,20 +10,12 @@ export function DemoCTA({ project }: { project: Project }) {
           Experience {project.name} with real data. No signup required.
         </p>
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <a
-            href={project.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-primary px-8 py-3 font-medium text-background transition-colors hover:bg-primary-hover"
-          >
+          <Button href={project.demoUrl} target="_blank" rel="noopener noreferrer">
             Open Live Demo
-          </a>
-          <Link
-            href="/#projects"
-            className="rounded-full border border-border px-8 py-3 font-medium transition-colors hover:border-primary hover:text-primary"
-          >
+          </Button>
+          <Button href="/#projects" variant="secondary">
             View All Projects
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

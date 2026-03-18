@@ -1,3 +1,6 @@
+import { CONTACT_EMAIL } from '@/lib/constants';
+import { Button } from '@/components/ui/Button';
+
 export function ContactCTA() {
   return (
     <section id="contact" className="px-6 py-24">
@@ -7,12 +10,7 @@ export function ContactCTA() {
           These proof-of-concepts showcase what&apos;s possible. We adapt and customize these AI
           models to fit your specific insurance workflows, data, and business requirements.
         </p>
-        <a
-          href="mailto:contact@symfa.com"
-          className="inline-block rounded-full bg-primary px-8 py-3 font-medium text-background transition-colors hover:bg-primary-hover"
-        >
-          Contact Us
-        </a>
+        <Button href={`mailto:${CONTACT_EMAIL}`}>Contact Us</Button>
       </div>
     </section>
   );

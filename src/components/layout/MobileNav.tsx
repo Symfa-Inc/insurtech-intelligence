@@ -1,12 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
-const navLinks = [
-  { href: '/#projects', label: 'Projects' },
-  { href: '/#capabilities', label: 'Capabilities' },
-  { href: '/#contact', label: 'Contact' },
-];
+import { NAV_LINKS } from '@/lib/constants';
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -16,13 +11,13 @@ export function MobileNav() {
       <button
         onClick={() => setOpen(!open)}
         aria-label={open ? 'Close menu' : 'Open menu'}
-        className="rounded-lg border border-border p-2 text-sm text-text-secondary transition-colors hover:border-primary hover:text-primary"
+        className="cursor-pointer rounded-lg border border-border p-2 text-sm text-text-secondary transition-colors hover:border-primary hover:text-primary"
       >
         {open ? '\u2715' : '\u2630'}
       </button>
       {open && (
         <div className="absolute left-0 right-0 top-16 border-b border-border bg-background px-6 py-4">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
