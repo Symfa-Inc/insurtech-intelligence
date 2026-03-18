@@ -129,7 +129,7 @@ const capabilities = [
     icon: ChartIcon,
   },
   {
-    title: 'Explainable AI (SHAP)',
+    title: 'Explainable AI',
     description:
       'Every prediction comes with per-instance feature contributions showing exactly why the model decided what it did.',
     icon: ExplainIcon,

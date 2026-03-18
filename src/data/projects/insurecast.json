@@ -3,7 +3,7 @@
   "name": "InsureCast",
   "shortDescription": "Workers' compensation forecasting dashboard with SARIMAX time-series models, scenario analysis, and multi-dimensional segmentation across states, industries, and claim types.",
   "tags": ["Time-Series", "Forecasting", "Scenario Analysis"],
-  "demoUrl": "#",
+  "demoUrl": "https://insurecast.ai.symfa.com/",
   "thumbnail": "/images/projects/insurecast/preview.jpg",
   "overview": {
     "problem": "Insurance companies need accurate claims forecasts to set reserves, price policies, and plan resources. Manual forecasting is slow, doesn't account for seasonality, and can't easily model 'what-if' scenarios across multiple business dimensions.",

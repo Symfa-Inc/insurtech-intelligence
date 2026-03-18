@@ -3,7 +3,7 @@
   "name": "Claim Assistant",
   "shortDescription": "AI-powered claim intake automation that extracts, validates, and analyzes insurance claim forms using document intelligence and large language models.",
   "tags": ["Document AI", "OCR", "LLM", "NLP"],
-  "demoUrl": "https://claim-assistant-demo.d11.symfa.com/",
+  "demoUrl": "https://claim-assistant.ai.symfa.com/",
   "thumbnail": "/images/projects/claim-assistant/preview.jpg",
   "overview": {
     "problem": "Insurance claim processing is manual, error-prone, and slow. Adjusters spend hours extracting data from PDF forms, cross-referencing policy records, and writing coverage analyses — repetitive work that delays claim resolution.",
