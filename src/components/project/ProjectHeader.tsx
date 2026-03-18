@@ -1,9 +1,19 @@
+import fs from 'fs';
+import path from 'path';
 import Link from 'next/link';
 import type { Project } from '@/lib/types';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 
+function hasPreview(thumbnail: string): boolean {
+  if (!thumbnail) return false;
+  const filePath = path.join(process.cwd(), 'public', thumbnail);
+  return fs.existsSync(filePath);
+}
+
 export function ProjectHeader({ project }: { project: Project }) {
+  const showImage = hasPreview(project.thumbnail);
+
   return (
     <section className="px-6 pb-12 pt-24">
       <div className="mx-auto max-w-4xl">
@@ -18,6 +28,11 @@ export function ProjectHeader({ project }: { project: Project }) {
           <span>/</span>
           <span className="text-foreground">{project.name}</span>
         </nav>
+        {showImage && (
+          <div className="mb-8 overflow-hidden rounded-xl border border-border">
+            <img src={project.thumbnail} alt={project.name} className="w-full object-cover" />
+          </div>
+        )}
         <div className="mb-6 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <Badge key={tag} size="md">

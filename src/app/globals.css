@@ -38,6 +38,10 @@
   --accent: #4ade80;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--bg);
   color: var(--fg);
