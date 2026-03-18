@@ -4,7 +4,7 @@
   "shortDescription": "Predictive pricing model that estimates annual insurance charges with transparent SHAP explanations and LLM-powered interpretation of each prediction.",
   "tags": ["Regression", "AutoML", "Explainable AI", "SHAP"],
   "demoUrl": "#",
-  "thumbnail": "/images/projects/insurance-pricing/thumbnail.webp",
+  "thumbnail": "/images/projects/insurance-pricing/preview.jpg",
   "overview": {
     "problem": "Insurance pricing requires balancing actuarial accuracy with customer transparency. Traditional black-box models produce estimates without explaining why, making it difficult for both underwriters and customers to understand pricing decisions.",
     "solution": "Insurance Pricing combines an AutoGluon regression ensemble with SHAP explainability and LLM-powered interpretation. Every prediction comes with a breakdown of which factors (age, BMI, smoking status, etc.) drove the price up or down, plus a plain-English explanation.",

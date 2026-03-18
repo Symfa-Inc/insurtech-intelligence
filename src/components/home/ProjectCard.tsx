@@ -19,30 +19,50 @@ const cardIcons: Record<string, string> = {
     'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z',
 };
 
+import fs from 'fs';
+import path from 'path';
+
+function hasPreview(thumbnail: string): boolean {
+  if (!thumbnail) return false;
+  const filePath = path.join(process.cwd(), 'public', thumbnail);
+  return fs.existsSync(filePath);
+}
+
 export function ProjectCard({ project }: { project: Project }) {
   const gradient = cardGradients[project.slug] ?? 'from-gray-600/20 to-transparent';
   const iconPath = cardIcons[project.slug];
+  const showImage = hasPreview(project.thumbnail);
 
   return (
     <Link
       href={`/projects/${project.slug}`}
       className="group rounded-xl border border-border bg-surface transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
     >
-      <div
-        className={`relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-t-xl bg-gradient-to-br ${gradient}`}
-      >
-        {iconPath && (
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="0.75"
-            className="h-24 w-24 text-foreground/10 transition-transform duration-500 group-hover:scale-110"
-          >
-            <path d={iconPath} strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        )}
-      </div>
+      {showImage ? (
+        <div className="relative aspect-video w-full overflow-hidden rounded-t-xl">
+          <img
+            src={project.thumbnail}
+            alt={project.name}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      ) : (
+        <div
+          className={`relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-t-xl bg-gradient-to-br ${gradient}`}
+        >
+          {iconPath && (
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.75"
+              className="h-24 w-24 text-foreground/10 transition-transform duration-500 group-hover:scale-110"
+            >
+              <path d={iconPath} strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          )}
+        </div>
+      )}
       <div className="p-6">
         <div className="mb-3 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
