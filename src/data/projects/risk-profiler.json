@@ -45,7 +45,7 @@
     { "category": "Data Processing", "items": ["Pandas", "NumPy"] }
   ],
   "data": {
-    "sources": "2023 Travelers NESS Statathon dataset from Kaggle — real insurance claim records with 10 features: age_of_driver, gender, high_education_ind, annual_income, living_status, claim_day_of_week, claim_est_payout, past_num_of_claims, witness_present_ind, and safety_rating.",
+    "sources": "2023 Travelers NESS Statathon dataset from Kaggle, containing real insurance claim records with 10 features: age_of_driver, gender, high_education_ind, annual_income, living_status, claim_day_of_week, claim_est_payout, past_num_of_claims, witness_present_ind, and safety_rating.",
     "methodology": "AutoGluon ensemble training with automatic model selection and hyperparameter tuning. Binary classification with 0.65 probability threshold. SHAP KernelExplainer with 100 background samples for per-instance explanations. Top 10 features ranked by global SHAP importance.",
     "metrics": "Top features by SHAP importance: annual income (1.0), age of driver (0.91), claim day of week (0.61). Model evaluated on holdout test set."
   },

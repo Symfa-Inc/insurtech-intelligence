@@ -149,7 +149,7 @@ export function Capabilities() {
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">What We Build</h2>
           <p className="mx-auto max-w-2xl text-text-secondary">
-            Our insurance AI toolkit spans the full spectrum — from document intake to predictive
+            Our insurance AI toolkit spans the full spectrum - from document intake to predictive
             analytics, all with explainability built in.
           </p>
         </div>

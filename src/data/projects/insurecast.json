@@ -37,7 +37,7 @@
     { "category": "Data Processing", "items": ["Pandas", "NumPy"] }
   ],
   "data": {
-    "sources": "OSHA Severe Injury Reports (SIR) — public occupational injury incident reports from the Bureau of Labor Statistics. Data normalized into monthly claim counts by state, industry (Manufacturing, Construction, Healthcare), and claim type (LostTime, MedicalOnly, Indemnity).",
+    "sources": "OSHA Severe Injury Reports (SIR), public occupational injury incident reports from the Bureau of Labor Statistics. Data normalized into monthly claim counts by state, industry (Manufacturing, Construction, Healthcare), and claim type (LostTime, MedicalOnly, Indemnity).",
     "methodology": "OSHA data ingested and aggregated by month/state/industry/claim_type. NAICS codes mapped to industry categories, event types mapped to claim types. Missing month-segment combinations filled with synthetic data sampled from segment-specific distributions. Severity parameters computed per segment with lognormal fitting. SARIMAX models fit with 12-month seasonal period.",
     "metrics": "SARIMAX performance: MAE 8.4, RMSE 10.7, MAPE 6.2%. Forecast horizon: 12 months with confidence intervals widening over time."
   },

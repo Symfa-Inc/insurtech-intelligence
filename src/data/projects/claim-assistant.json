@@ -6,11 +6,11 @@
   "demoUrl": "https://claim-assistant.ai.symfa.com/",
   "thumbnail": "/images/projects/claim-assistant/preview.jpg",
   "overview": {
-    "problem": "Insurance claim processing is manual, error-prone, and slow. Adjusters spend hours extracting data from PDF forms, cross-referencing policy records, and writing coverage analyses — repetitive work that delays claim resolution.",
+    "problem": "Insurance claim processing is manual, error-prone, and slow. Adjusters spend hours extracting data from PDF forms, cross-referencing policy records, and writing coverage analyses, repetitive work that delays claim resolution.",
     "solution": "Claim Assistant automates the entire intake pipeline: Azure Document Intelligence extracts key-value pairs from scanned PDFs, GPT-5 maps extractions to structured form fields with evidence tracking, and an LLM-powered validation engine performs coverage analysis against policy records.",
     "outcomes": [
       "Automated field extraction with confidence scoring (flags fields below 80% for human review)",
-      "Evidence-tracked form filling — every answer links back to source document extractions",
+      "Evidence-tracked form filling: every answer links back to source document extractions",
       "Policy matching with weighted name similarity (Levenshtein) and date validation",
       "LLM-generated coverage analysis with reasoning and confidence scores"
     ]
@@ -41,7 +41,7 @@
   ],
   "data": {
     "sources": "State-specific insurance claim form templates (FL, NH, MN, IA, KS, NY, OH, WI) with structured field schemas, plus a policy database with coverage terms, holder information, and validity periods.",
-    "methodology": "5-stage modular pipeline: (1) Data Preparation — normalize scanned PDFs, (2) Key Extraction — Azure DI prebuilt-document model extracts key-value pairs with confidence scores, (3) Form Filling — GPT-5.2 maps extractions to form fields with one-to-many evidence tracking, (4) Policy Matching — lookup by policy ID with weighted Levenshtein name verification, (5) Validation — LLM-based coverage analysis with date and claimant verification.",
+    "methodology": "5-stage modular pipeline: (1) Data Preparation - normalize scanned PDFs, (2) Key Extraction - Azure DI prebuilt-document model extracts key-value pairs with confidence scores, (3) Form Filling - GPT-5.2 maps extractions to form fields with one-to-many evidence tracking, (4) Policy Matching - lookup by policy ID with weighted Levenshtein name verification, (5) Validation - LLM-based coverage analysis with date and claimant verification.",
     "metrics": "Field extraction confidence threshold: 80%. Name matching uses weighted similarity: 60% policy ID, 15% first name, 25% last name."
   },
   "screenshots": []

@@ -14,7 +14,7 @@ export function Hero() {
           Intelligence That <span className="text-primary">Transforms</span> Insurance
         </h1>
         <p className="animate-fade-in-up animation-delay-200 mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
-          From claim processing to fraud detection, predictive pricing to forecasting -we build
+          From claim processing to fraud detection, predictive pricing to forecasting - we build
           production-ready AI solutions for the insurance industry. Explore our proof-of-concept
           demos below.
         </p>
