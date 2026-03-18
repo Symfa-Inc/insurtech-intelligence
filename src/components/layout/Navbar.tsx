@@ -14,7 +14,13 @@ export function Navbar() {
     <nav className="fixed top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo/symfa.webp" alt="Symfa" width={32} height={32} />
+          <Image
+            src="/images/logo/symfa.webp"
+            alt="Symfa"
+            width={32}
+            height={32}
+            className="rounded-md"
+          />
           <span className="text-lg font-semibold">InsurTech Intelligence</span>
         </Link>
         <div className="flex items-center gap-6">
