@@ -5,7 +5,7 @@ import { ProjectHeader } from '@/components/project/ProjectHeader';
 import { Overview } from '@/components/project/Overview';
 import { ModelsAndTech } from '@/components/project/ModelsAndTech';
 import { DataMethodology } from '@/components/project/DataMethodology';
-import { Screenshots } from '@/components/project/Screenshots';
+import { Previews } from '@/components/project/Previews';
 import { DemoCTA } from '@/components/project/DemoCTA';
 
 interface PageProps {
@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: PageProps) {
       <Overview project={project} />
       <ModelsAndTech project={project} />
       <DataMethodology project={project} />
-      <Screenshots project={project} />
+      <Previews project={project} />
       <DemoCTA project={project} />
     </>
   );

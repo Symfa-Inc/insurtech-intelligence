@@ -49,5 +49,5 @@
     "methodology": "Preprocessing: Winsorization (IQR 1.5x) for BMI/charges outliers, log1p transformation on target, StandardScaler on age/BMI, one-hot encoding for region, binary encoding for sex/smoker, feature interactions (smoker×BMI, age×BMI). Stratified 80/20 train/test split by smoker and region. AutoGluon training with 300s time limit and 5-fold bagging.",
     "metrics": "Evaluation metrics: R², MAPE (Mean Absolute Percentage Error), and SMAPE. MAPE used as primary optimization target."
   },
-  "screenshots": []
+  "previews": ["/images/projects/insurance-pricing/preview-1.png"]
 }

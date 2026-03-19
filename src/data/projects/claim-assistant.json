@@ -44,9 +44,9 @@
     "methodology": "5-stage modular pipeline: (1) Data Preparation - normalize scanned PDFs, (2) Key Extraction - Azure DI prebuilt-document model extracts key-value pairs with confidence scores, (3) Form Filling - GPT-5.2 maps extractions to form fields with one-to-many evidence tracking, (4) Policy Matching - lookup by policy ID with weighted Levenshtein name verification, (5) Validation - LLM-based coverage analysis with date and claimant verification.",
     "metrics": "Field extraction confidence threshold: 80%. Name matching uses weighted similarity: 60% policy ID, 15% first name, 25% last name."
   },
-  "screenshots": [
-    "/images/projects/claim-assistant/screenshot-1.png",
-    "/images/projects/claim-assistant/screenshot-2.png",
-    "/images/projects/claim-assistant/screenshot-3.png"
+  "previews": [
+    "/images/projects/claim-assistant/preview-1.png",
+    "/images/projects/claim-assistant/preview-2.png",
+    "/images/projects/claim-assistant/preview-3.png"
   ]
 }

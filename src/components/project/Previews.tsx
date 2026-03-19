@@ -73,7 +73,7 @@ function Lightbox({
             onPrev();
           }}
           className="absolute left-4 z-10 cursor-pointer rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20"
-          aria-label="Previous screenshot"
+          aria-label="Previous preview"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ function Lightbox({
             onNext();
           }}
           className="absolute right-4 z-10 cursor-pointer rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20"
-          aria-label="Next screenshot"
+          aria-label="Next preview"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@ function Lightbox({
   );
 }
 
-function ScreenshotThumbnail({
+function PreviewThumbnail({
   src,
   alt,
   onClick,
@@ -174,21 +174,21 @@ function ScreenshotThumbnail({
   );
 }
 
-export function Screenshots({ project }: { project: Project }) {
+export function Previews({ project }: { project: Project }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  if (project.screenshots.length === 0) {
+  if (project.previews.length === 0) {
     return (
       <section className="px-6 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-8 text-2xl font-bold">Screenshots</h2>
+          <h2 className="mb-8 text-2xl font-bold">Preview</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {[1, 2].map((i) => (
               <div
                 key={i}
                 className="flex aspect-video items-center justify-center rounded-lg border border-dashed border-border bg-surface text-sm text-text-secondary"
               >
-                Screenshot coming soon
+                Preview coming soon
               </div>
             ))}
           </div>
@@ -200,28 +200,28 @@ export function Screenshots({ project }: { project: Project }) {
   return (
     <section className="px-6 py-12">
       <div className="mx-auto max-w-4xl">
-        <h2 className="mb-8 text-2xl font-bold">Screenshots</h2>
+        <h2 className="mb-8 text-2xl font-bold">Preview</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {project.screenshots.map((src, i) => (
-            <ScreenshotThumbnail
+          {project.previews.map((src, i) => (
+            <PreviewThumbnail
               key={i}
               src={src}
-              alt={`${project.name} screenshot ${i + 1}`}
+              alt={`${project.name} preview ${i + 1}`}
               onClick={() => setLightboxIndex(i)}
-              featured={project.screenshots.length === 3 && i === 0}
+              featured={project.previews.length === 3 && i === 0}
             />
           ))}
         </div>
       </div>
       {lightboxIndex !== null && (
         <Lightbox
-          src={project.screenshots[lightboxIndex]}
+          src={project.previews[lightboxIndex]}
           alt={`${project.name} screenshot ${lightboxIndex + 1}`}
           onClose={() => setLightboxIndex(null)}
           onPrev={() => setLightboxIndex((i) => (i !== null ? i - 1 : 0))}
           onNext={() => setLightboxIndex((i) => (i !== null ? i + 1 : 0))}
           hasPrev={lightboxIndex > 0}
-          hasNext={lightboxIndex < project.screenshots.length - 1}
+          hasNext={lightboxIndex < project.previews.length - 1}
         />
       )}
     </section>

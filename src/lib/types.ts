@@ -32,5 +32,5 @@ export interface Project {
   models: ProjectModel[];
   techStack: TechStackCategory[];
   data: ProjectData;
-  screenshots: string[];
+  previews: string[];
 }
