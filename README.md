@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/logo.png" width="200" alt="InsurTech Intelligence Logo" />
+<img src="public/logo.png" width="150" alt="InsurTech Intelligence Logo" />
 
 # InsurTech Intelligence
 
