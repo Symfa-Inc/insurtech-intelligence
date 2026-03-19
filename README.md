@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="public/logo.png" width="250" alt="InsurTech Intelligence Logo" />
+
 # InsurTech Intelligence
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black.svg)](https://nextjs.org/)
