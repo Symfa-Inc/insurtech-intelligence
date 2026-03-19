@@ -128,6 +128,52 @@ function Lightbox({
   );
 }
 
+function ScreenshotThumbnail({
+  src,
+  alt,
+  onClick,
+  featured,
+}: {
+  src: string;
+  alt: string;
+  onClick: () => void;
+  featured: boolean;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`group relative cursor-pointer overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5${featured ? ' sm:col-span-2' : ''}`}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="w-full transition-transform duration-500 group-hover:scale-[1.03]"
+      />
+      {/* Hover overlay with expand icon */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/20">
+        <div className="rounded-full bg-white/0 p-3 text-white opacity-0 transition-all duration-300 group-hover:bg-white/20 group-hover:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="15 3 21 3 21 9" />
+            <polyline points="9 21 3 21 3 15" />
+            <line x1="21" y1="3" x2="14" y2="10" />
+            <line x1="3" y1="21" x2="10" y2="14" />
+          </svg>
+        </div>
+      </div>
+    </button>
+  );
+}
+
 export function Screenshots({ project }: { project: Project }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -157,38 +203,13 @@ export function Screenshots({ project }: { project: Project }) {
         <h2 className="mb-8 text-2xl font-bold">Screenshots</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {project.screenshots.map((src, i) => (
-            <button
+            <ScreenshotThumbnail
               key={i}
+              src={src}
+              alt={`${project.name} screenshot ${i + 1}`}
               onClick={() => setLightboxIndex(i)}
-              className="group relative cursor-pointer overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
-            >
-              <img
-                src={src}
-                alt={`${project.name} screenshot ${i + 1}`}
-                className="w-full transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-              {/* Hover overlay with expand icon */}
-              <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/20">
-                <div className="rounded-full bg-white/0 p-3 text-white opacity-0 transition-all duration-300 group-hover:bg-white/20 group-hover:opacity-100">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9" />
-                    <polyline points="9 21 3 21 3 15" />
-                    <line x1="21" y1="3" x2="14" y2="10" />
-                    <line x1="3" y1="21" x2="10" y2="14" />
-                  </svg>
-                </div>
-              </div>
-            </button>
+              featured={project.screenshots.length === 3 && i === 0}
+            />
           ))}
         </div>
       </div>
