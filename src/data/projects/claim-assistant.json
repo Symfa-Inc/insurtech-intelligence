@@ -1,0 +1,52 @@
+{
+  "slug": "claim-assistant",
+  "name": "Claim Assistant",
+  "shortDescription": "AI-powered claim intake automation that extracts, validates, and analyzes insurance claim forms using document intelligence and large language models.",
+  "tags": ["Document AI", "OCR", "LLM", "NLP"],
+  "demoUrl": "https://claim-assistant.ai.symfa.com/",
+  "thumbnail": "/images/projects/claim-assistant/preview.jpg",
+  "overview": {
+    "problem": "Insurance claim processing is manual, error-prone, and slow. Adjusters spend hours extracting data from PDF forms, cross-referencing policy records, and writing coverage analyses, repetitive work that delays claim resolution.",
+    "solution": "Claim Assistant automates the entire intake pipeline: Azure Document Intelligence extracts key-value pairs from scanned PDFs, GPT-5 maps extractions to structured form fields with evidence tracking, and an LLM-powered validation engine performs coverage analysis against policy records.",
+    "outcomes": [
+      "Automated field extraction with confidence scoring (flags fields below 80% for human review)",
+      "Evidence-tracked form filling: every answer links back to source document extractions",
+      "Policy matching with weighted name similarity (Levenshtein) and date validation",
+      "LLM-generated coverage analysis with reasoning and confidence scores"
+    ]
+  },
+  "models": [
+    {
+      "name": "Azure Document Intelligence",
+      "purpose": "OCR and key-value extraction from scanned/filled PDF claim forms",
+      "details": "Uses the prebuilt-document model to extract key-value pairs with confidence scores and bounding regions from insurance claim PDFs across 8+ US states."
+    },
+    {
+      "name": "OpenAI GPT-5 Family",
+      "purpose": "Structured form filling and coverage analysis",
+      "details": "GPT-5.2 performs form filling by mapping DI extractions to form fields using structured output parsing. GPT-5-nano handles coverage analysis, reasoning about whether claims fall within policy terms."
+    }
+  ],
+  "techStack": [
+    { "category": "Backend", "items": ["Python 3.13", "FastAPI", "Uvicorn", "Pydantic"] },
+    {
+      "category": "Frontend",
+      "items": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS"]
+    },
+    {
+      "category": "ML/AI",
+      "items": ["Azure Document Intelligence SDK", "OpenAI API", "Levenshtein similarity"]
+    },
+    { "category": "Data Processing", "items": ["FillPDF", "ReportLab", "PyPDF2"] }
+  ],
+  "data": {
+    "sources": "State-specific insurance claim form templates (FL, NH, MN, IA, KS, NY, OH, WI) with structured field schemas, plus a policy database with coverage terms, holder information, and validity periods.",
+    "methodology": "5-stage modular pipeline: (1) Data Preparation - normalize scanned PDFs, (2) Key Extraction - Azure DI prebuilt-document model extracts key-value pairs with confidence scores, (3) Form Filling - GPT-5.2 maps extractions to form fields with one-to-many evidence tracking, (4) Policy Matching - lookup by policy ID with weighted Levenshtein name verification, (5) Validation - LLM-based coverage analysis with date and claimant verification.",
+    "metrics": "Field extraction confidence threshold: 80%. Name matching uses weighted similarity: 60% policy ID, 15% first name, 25% last name."
+  },
+  "previews": [
+    "/images/projects/claim-assistant/preview-1.png",
+    "/images/projects/claim-assistant/preview-2.png",
+    "/images/projects/claim-assistant/preview-3.png"
+  ]
+}

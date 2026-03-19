@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="public/logo.png" width="150" alt="InsurTech Intelligence Logo" />
+
 # InsurTech Intelligence
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black.svg)](https://nextjs.org/)
@@ -9,7 +11,7 @@
 
 **A showcase platform for proof-of-concept projects exploring AI and ML applications in insurance**
 
-🔗 **Live Demo**: _TODO_
+🔗 **Live Demo**: [https://insurtech-intelligence.ai.symfa.com/](https://insurtech-intelligence.ai.symfa.com)
 
 💻 **GitHub**: [https://github.com/Symfa-Inc/insurtech-intelligence](https://github.com/Symfa-Inc/insurtech-intelligence)
 
@@ -51,6 +53,13 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Running with Docker
+
+```bash
+docker build -t insurtech-intelligence .
+docker run -p 3000:3000 insurtech-intelligence
+```
 
 ## Tech Stack
 
