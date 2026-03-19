@@ -40,6 +40,9 @@ function Lightbox({
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image preview"
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={onClose}
     >
@@ -72,7 +75,7 @@ function Lightbox({
             e.stopPropagation();
             onPrev();
           }}
-          className="absolute left-4 z-10 cursor-pointer rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20"
+          className="absolute left-4 top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20"
           aria-label="Previous preview"
         >
           <svg
@@ -98,7 +101,7 @@ function Lightbox({
             e.stopPropagation();
             onNext();
           }}
-          className="absolute right-4 z-10 cursor-pointer rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20"
+          className="absolute right-4 top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20"
           aria-label="Next preview"
         >
           <svg
@@ -216,7 +219,7 @@ export function Previews({ project }: { project: Project }) {
       {lightboxIndex !== null && (
         <Lightbox
           src={project.previews[lightboxIndex]}
-          alt={`${project.name} screenshot ${lightboxIndex + 1}`}
+          alt={`${project.name} preview ${lightboxIndex + 1}`}
           onClose={() => setLightboxIndex(null)}
           onPrev={() => setLightboxIndex((i) => (i !== null ? i - 1 : 0))}
           onNext={() => setLightboxIndex((i) => (i !== null ? i + 1 : 0))}
