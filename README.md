@@ -54,6 +54,13 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Running with Docker
+
+```bash
+docker build -t insurtech-intelligence .
+docker run -p 3000:3000 insurtech-intelligence
+```
+
 ## Tech Stack
 
 - **Framework:** [Next.js](https://nextjs.org) 16 (App Router)
