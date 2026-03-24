@@ -1,0 +1,55 @@
+name: CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  GCP_PROJECT_ID: 'symfa-1669197925914'
+  GCP_REGION: 'europe-west3'
+  GAR_REPOSITORY: 'apps'
+  APP_NAME: 'insurtech-intelligence'
+  IMAGE_NAME: 'frontend'
+  REGISTRY_HOST: 'europe-west3-docker.pkg.dev'
+
+jobs:
+  publish-image:
+    runs-on: ubuntu-latest
+    name: Publish Docker Image
+    permissions:
+      contents: read
+    env:
+      IMAGE_REPOSITORY: ${{ env.REGISTRY_HOST }}/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPOSITORY }}/${{ env.APP_NAME }}/${{ env.IMAGE_NAME }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Google Artifact Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY_HOST }}
+          username: _json_key
+          password: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE_REPOSITORY }}
+          tags: |
+            type=raw,value=latest
+            type=sha,format=short
+
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
