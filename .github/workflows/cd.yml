@@ -42,7 +42,7 @@ jobs:
           images: europe-west3-docker.pkg.dev/symfa-1669197925914/apps/insurtech-intelligence/frontend
           tags: |
             type=raw,value=latest
-            type=sha,format=short
+            type=raw,value=${{ github.run_number }}
 
       - name: Build and push image
         uses: docker/build-push-action@v6
