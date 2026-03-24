@@ -9,8 +9,7 @@ on:
 env:
   GCP_PROJECT_ID: 'symfa-1669197925914'
   GCP_REGION: 'europe-west3'
-  GAR_REPOSITORY: 'apps'
-  APP_NAME: 'insurtech-intelligence'
+  GAR_REPOSITORY: 'insurtech-intelligence'
   IMAGE_NAME: 'frontend'
 
 jobs:
@@ -31,7 +30,7 @@ jobs:
         shell: bash
         run: |
           registry_host="${GCP_REGION}-docker.pkg.dev"
-          image_repository="${registry_host}/${GCP_PROJECT_ID}/${GAR_REPOSITORY}/${APP_NAME}/${IMAGE_NAME}"
+          image_repository="${registry_host}/${GCP_PROJECT_ID}/${GAR_REPOSITORY}/${IMAGE_NAME}"
 
           {
             echo "registry_host=${registry_host}"
