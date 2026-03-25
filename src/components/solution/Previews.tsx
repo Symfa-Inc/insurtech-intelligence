@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import type { Project } from '@/lib/types';
+import type { Solution } from '@/lib/types';
 
 function Lightbox({
   src,
@@ -177,10 +177,10 @@ function PreviewThumbnail({
   );
 }
 
-export function Previews({ project }: { project: Project }) {
+export function Previews({ solution }: { solution: Solution }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  if (project.previews.length === 0) {
+  if (solution.previews.length === 0) {
     return (
       <section className="px-6 py-12">
         <div className="mx-auto max-w-4xl">
@@ -205,26 +205,26 @@ export function Previews({ project }: { project: Project }) {
       <div className="mx-auto max-w-4xl">
         <h2 className="mb-8 text-2xl font-bold">Preview</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {project.previews.map((src, i) => (
+          {solution.previews.map((src, i) => (
             <PreviewThumbnail
               key={i}
               src={src}
-              alt={`${project.name} preview ${i + 1}`}
+              alt={`${solution.name} preview ${i + 1}`}
               onClick={() => setLightboxIndex(i)}
-              featured={project.previews.length === 3 && i === 0}
+              featured={solution.previews.length === 3 && i === 0}
             />
           ))}
         </div>
       </div>
       {lightboxIndex !== null && (
         <Lightbox
-          src={project.previews[lightboxIndex]}
-          alt={`${project.name} preview ${lightboxIndex + 1}`}
+          src={solution.previews[lightboxIndex]}
+          alt={`${solution.name} preview ${lightboxIndex + 1}`}
           onClose={() => setLightboxIndex(null)}
           onPrev={() => setLightboxIndex((i) => (i !== null ? i - 1 : 0))}
           onNext={() => setLightboxIndex((i) => (i !== null ? i + 1 : 0))}
           hasPrev={lightboxIndex > 0}
-          hasNext={lightboxIndex < project.previews.length - 1}
+          hasNext={lightboxIndex < solution.previews.length - 1}
         />
       )}
     </section>

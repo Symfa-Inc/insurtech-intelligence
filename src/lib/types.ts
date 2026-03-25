@@ -1,4 +1,4 @@
-export interface ProjectModel {
+export interface SolutionModel {
   name: string;
   purpose: string;
   details?: string;
@@ -9,28 +9,28 @@ export interface TechStackCategory {
   items: string[];
 }
 
-export interface ProjectOverview {
+export interface SolutionOverview {
   problem: string;
   solution: string;
   outcomes: string[];
 }
 
-export interface ProjectData {
+export interface SolutionData {
   sources: string;
   methodology: string;
   metrics?: string;
 }
 
-export interface Project {
+export interface Solution {
   slug: string;
   name: string;
   shortDescription: string;
   tags: string[];
   demoUrl: string;
   thumbnail: string;
-  overview: ProjectOverview;
-  models: ProjectModel[];
+  overview: SolutionOverview;
+  models: SolutionModel[];
   techStack: TechStackCategory[];
-  data: ProjectData;
+  data: SolutionData;
   previews: string[];
 }

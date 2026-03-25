@@ -1,6 +1,6 @@
-import type { Project } from '@/lib/types';
+import type { Solution } from '@/lib/types';
 
-export function ModelsAndTech({ project }: { project: Project }) {
+export function ModelsAndTech({ solution }: { solution: Solution }) {
   return (
     <section className="border-y border-border bg-surface/50 px-6 py-12">
       <div className="mx-auto max-w-4xl">
@@ -8,7 +8,7 @@ export function ModelsAndTech({ project }: { project: Project }) {
 
         <div className="mb-10 space-y-4">
           <h3 className="text-lg font-semibold">AI/ML Models</h3>
-          {project.models.map((model) => (
+          {solution.models.map((model) => (
             <div key={model.name} className="rounded-lg border border-border bg-background p-5">
               <div className="mb-1 font-semibold">{model.name}</div>
               <div className="mb-2 text-sm text-primary">{model.purpose}</div>
@@ -22,7 +22,7 @@ export function ModelsAndTech({ project }: { project: Project }) {
         <div>
           <h3 className="mb-4 text-lg font-semibold">Tech Stack</h3>
           <div className="grid gap-4 sm:grid-cols-2">
-            {project.techStack.map((cat) => (
+            {solution.techStack.map((cat) => (
               <div key={cat.category} className="rounded-lg border border-border bg-background p-5">
                 <div className="mb-3 text-sm font-semibold text-primary">{cat.category}</div>
                 <div className="flex flex-wrap gap-2">

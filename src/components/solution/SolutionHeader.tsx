@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
-import type { Project } from '@/lib/types';
+import type { Solution } from '@/lib/types';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 
@@ -11,8 +11,8 @@ function hasPreview(thumbnail: string): boolean {
   return fs.existsSync(filePath);
 }
 
-export function ProjectHeader({ project }: { project: Project }) {
-  const showImage = hasPreview(project.thumbnail);
+export function SolutionHeader({ solution }: { solution: Solution }) {
+  const showImage = hasPreview(solution.thumbnail);
 
   return (
     <section className="px-6 pb-12 pt-24">
@@ -26,25 +26,25 @@ export function ProjectHeader({ project }: { project: Project }) {
             Solutions
           </Link>
           <span>/</span>
-          <span className="text-foreground">{project.name}</span>
+          <span className="text-foreground">{solution.name}</span>
         </nav>
         {showImage && (
           <div className="mb-8 overflow-hidden rounded-xl border border-border">
-            <img src={project.thumbnail} alt={project.name} className="w-full object-cover" />
+            <img src={solution.thumbnail} alt={solution.name} className="w-full object-cover" />
           </div>
         )}
         <div className="mb-6 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
+          {solution.tags.map((tag) => (
             <Badge key={tag} size="md">
               {tag}
             </Badge>
           ))}
         </div>
-        <h1 className="mb-6 text-4xl font-bold md:text-5xl">{project.name}</h1>
+        <h1 className="mb-6 text-4xl font-bold md:text-5xl">{solution.name}</h1>
         <p className="mb-8 max-w-3xl text-lg leading-relaxed text-text-secondary">
-          {project.shortDescription}
+          {solution.shortDescription}
         </p>
-        <Button href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+        <Button href={solution.demoUrl} target="_blank" rel="noopener noreferrer">
           Try Live Demo
           <span aria-hidden="true">&rarr;</span>
         </Button>

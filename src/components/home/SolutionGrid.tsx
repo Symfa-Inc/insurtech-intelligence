@@ -1,8 +1,8 @@
-import { getAllProjects } from '@/lib/projects';
-import { ProjectCard } from './ProjectCard';
+import { getAllSolutions } from '@/lib/solutions';
+import { SolutionCard } from './SolutionCard';
 
-export function ProjectGrid() {
-  const projects = getAllProjects();
+export function SolutionGrid() {
+  const solutions = getAllSolutions();
 
   return (
     <section id="solutions" className="px-6 py-24">
@@ -15,8 +15,8 @@ export function ProjectGrid() {
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+          {solutions.map((solution) => (
+            <SolutionCard key={solution.slug} solution={solution} />
           ))}
         </div>
       </div>
