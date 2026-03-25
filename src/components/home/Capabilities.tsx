@@ -107,37 +107,37 @@ const capabilities = [
   {
     title: 'Document Intelligence & OCR',
     description:
-      'Extract structured data from scanned forms, PDFs, and handwritten documents with confidence scoring.',
+      'Extract and structure data from forms, PDFs, scans, and other business documents with reliable downstream processing.',
     icon: DocumentIcon,
   },
   {
-    title: 'Fraud Detection & Risk Scoring',
+    title: 'Predictive Analytics',
     description:
-      'Identify suspicious claims using ensemble ML models with transparent probability scoring.',
+      'Build ML models that estimate outcomes, classify events, and support data-driven decisions.',
     icon: ShieldIcon,
   },
   {
-    title: 'Predictive Pricing Models',
+    title: 'Risk & Decision Support',
     description:
-      'Estimate insurance charges with feature-engineered regression ensembles and extrapolation detection.',
+      'Score, prioritize, and route cases using AI-assisted evaluation and transparent business logic.',
     icon: CurrencyIcon,
   },
   {
-    title: 'Time-Series Forecasting',
+    title: 'Forecasting & Scenario Modeling',
     description:
-      'Forecast claims counts and costs with seasonal models, confidence intervals, and scenario analysis.',
+      'Model trends, seasonality, and future outcomes for planning, operations, strategy, and scenario-based decision making.',
     icon: ChartIcon,
   },
   {
     title: 'Explainable AI',
     description:
-      'Every prediction comes with per-instance feature contributions showing exactly why the model decided what it did.',
+      'Make model behavior interpretable with clear drivers, confidence signals, and business-readable outputs.',
     icon: ExplainIcon,
   },
   {
-    title: 'LLM Integration',
+    title: 'LLM-Powered Automation',
     description:
-      'Large language models for natural language summaries, structured data extraction, and intelligent analysis.',
+      'Use large language models for summarization, extraction, search, reasoning, and workflow acceleration.',
     icon: BrainIcon,
   },
 ];
@@ -149,8 +149,8 @@ export function Capabilities() {
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">What We Build</h2>
           <p className="mx-auto max-w-2xl text-text-secondary">
-            Our insurance AI toolkit spans the full spectrum - from document intake to predictive
-            analytics, all with explainability built in.
+            We design and deliver AI and ML solutions across document workflows, decision support,
+            predictive modeling, and intelligent automation.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
