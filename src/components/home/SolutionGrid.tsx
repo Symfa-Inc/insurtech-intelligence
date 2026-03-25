@@ -10,8 +10,8 @@ export function SolutionGrid() {
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Solutions</h2>
           <p className="mx-auto max-w-2xl text-text-secondary">
-            Production-ready proof-of-concepts demonstrating our insurance AI capabilities. Each
-            solution includes a live demo you can try.
+            Production-ready solutions demonstrating our insurance AI capabilities. Each solution
+            includes a live demo you can try.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2">

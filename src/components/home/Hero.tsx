@@ -15,8 +15,7 @@ export function Hero() {
         </h1>
         <p className="animate-fade-in-up animation-delay-200 mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl">
           From claim processing to fraud detection, predictive pricing to forecasting - we build
-          production-ready AI solutions for the insurance industry. Explore our proof-of-concepts
-          below.
+          production-ready AI solutions for the insurance industry. Explore our solutions below.
         </p>
         <div className="animate-fade-in-up animation-delay-300 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button href="#solutions">Explore Solutions</Button>

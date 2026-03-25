@@ -9,7 +9,7 @@
 [![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8.svg)](https://tailwindcss.com/)
 
-**A showcase platform for proof-of-concept solutions exploring AI and ML applications in insurance**
+**A showcase platform for AI and ML solutions in insurance**
 
 🔗 **Live Demo**: [https://insurtech-intelligence.symfa.ai/](https://insurtech-intelligence.symfa.ai)
 
