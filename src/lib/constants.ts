@@ -2,6 +2,7 @@ export const SITE_NAME = 'InsurTech Intelligence';
 export const COMPANY_NAME = 'Symfa';
 export const CONTACT_EMAIL = 'contact@symfa.com';
 export const LOGO_PATH = '/images/logo/symfa.webp';
+export const SITE_URL = 'https://insurtech-intelligence.symfa.ai';
 
 export const NAV_LINKS = [
   {

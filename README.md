@@ -11,7 +11,7 @@
 
 **A showcase platform for proof-of-concept projects exploring AI and ML applications in insurance**
 
-🔗 **Live Demo**: [https://insurtech-intelligence.ai.symfa.com/](https://insurtech-intelligence.ai.symfa.com)
+🔗 **Live Demo**: [https://insurtech-intelligence.symfa.ai/](https://insurtech-intelligence.symfa.ai)
 
 💻 **GitHub**: [https://github.com/Symfa-Inc/insurtech-intelligence](https://github.com/Symfa-Inc/insurtech-intelligence)
 

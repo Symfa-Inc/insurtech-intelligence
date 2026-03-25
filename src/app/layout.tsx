@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeScript } from '@/components/layout/ThemeScript';
-import { SITE_NAME, COMPANY_NAME, LOGO_PATH } from '@/lib/constants';
+import { SITE_NAME, COMPANY_NAME, LOGO_PATH, SITE_URL } from '@/lib/constants';
 import './globals.css';
 
 const geistSans = Geist({
@@ -23,10 +23,15 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title,
     description,
     type: 'website',
+    url: SITE_URL,
     images: [
       {
         url: LOGO_PATH,
