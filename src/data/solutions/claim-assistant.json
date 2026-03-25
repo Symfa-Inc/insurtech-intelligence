@@ -4,7 +4,7 @@
   "shortDescription": "AI-powered claim intake automation that extracts, validates, and analyzes insurance claim forms using document intelligence and large language models.",
   "tags": ["Document AI", "OCR", "LLM", "NLP"],
   "demoUrl": "https://claim-assistant.ai.symfa.com/",
-  "thumbnail": "/images/projects/claim-assistant/preview.jpg",
+  "thumbnail": "/images/solutions/claim-assistant/preview.jpg",
   "overview": {
     "problem": "Insurance claim processing is manual, error-prone, and slow. Adjusters spend hours extracting data from PDF forms, cross-referencing policy records, and writing coverage analyses, repetitive work that delays claim resolution.",
     "solution": "Claim Assistant automates the entire intake pipeline: Azure Document Intelligence extracts key-value pairs from scanned PDFs, GPT-5 maps extractions to structured form fields with evidence tracking, and an LLM-powered validation engine performs coverage analysis against policy records.",
@@ -45,8 +45,8 @@
     "metrics": "Field extraction confidence threshold: 80%. Name matching uses weighted similarity: 60% policy ID, 15% first name, 25% last name."
   },
   "previews": [
-    "/images/projects/claim-assistant/preview-1.png",
-    "/images/projects/claim-assistant/preview-2.png",
-    "/images/projects/claim-assistant/preview-3.png"
+    "/images/solutions/claim-assistant/preview-1.png",
+    "/images/solutions/claim-assistant/preview-2.png",
+    "/images/solutions/claim-assistant/preview-3.png"
   ]
 }

@@ -7,7 +7,7 @@ export function ContactCTA() {
       <div className="mx-auto max-w-4xl rounded-2xl border border-border bg-surface p-12 text-center">
         <h2 className="mb-4 text-3xl font-bold md:text-4xl">Let&apos;s Build Something Together</h2>
         <p className="mx-auto mb-8 max-w-2xl text-text-secondary">
-          These proof-of-concepts showcase what&apos;s possible. We adapt and customize these AI
+          These solutions showcase what&apos;s possible. We adapt and customize these AI and ML
           models to fit your specific insurance workflows, data, and business requirements.
         </p>
         <Button href={`mailto:${CONTACT_EMAIL}`}>Contact Us</Button>

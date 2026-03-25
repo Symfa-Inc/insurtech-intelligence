@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
-import type { Project } from '@/lib/types';
+import type { Solution } from '@/lib/types';
 import { Badge } from '@/components/ui/Badge';
 
 const cardGradients: Record<string, string> = {
@@ -28,21 +28,21 @@ function hasPreview(thumbnail: string): boolean {
   return fs.existsSync(filePath);
 }
 
-export function ProjectCard({ project }: { project: Project }) {
-  const gradient = cardGradients[project.slug] ?? 'from-gray-600/20 to-transparent';
-  const iconPath = cardIcons[project.slug];
-  const showImage = hasPreview(project.thumbnail);
+export function SolutionCard({ solution }: { solution: Solution }) {
+  const gradient = cardGradients[solution.slug] ?? 'from-gray-600/20 to-transparent';
+  const iconPath = cardIcons[solution.slug];
+  const showImage = hasPreview(solution.thumbnail);
 
   return (
     <Link
-      href={`/projects/${project.slug}`}
+      href={`/solutions/${solution.slug}`}
       className="group rounded-xl border border-border bg-surface transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
     >
       {showImage ? (
         <div className="relative aspect-video w-full overflow-hidden rounded-t-xl">
           <img
-            src={project.thumbnail}
-            alt={project.name}
+            src={solution.thumbnail}
+            alt={solution.name}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
@@ -65,14 +65,14 @@ export function ProjectCard({ project }: { project: Project }) {
       )}
       <div className="p-6">
         <div className="mb-3 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
+          {solution.tags.map((tag) => (
             <Badge key={tag}>{tag}</Badge>
           ))}
         </div>
         <h3 className="mb-2 text-xl font-semibold transition-colors group-hover:text-primary">
-          {project.name}
+          {solution.name}
         </h3>
-        <p className="text-sm leading-relaxed text-text-secondary">{project.shortDescription}</p>
+        <p className="text-sm leading-relaxed text-text-secondary">{solution.shortDescription}</p>
       </div>
     </Link>
   );

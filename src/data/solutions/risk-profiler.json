@@ -4,7 +4,7 @@
   "shortDescription": "Machine learning fraud detection system that scores insurance claims for fraud probability with explainable AI and natural language risk summaries.",
   "tags": ["AutoML", "Fraud Detection", "Explainable AI", "SHAP"],
   "demoUrl": "https://risk-profiler.ai.symfa.com/",
-  "thumbnail": "/images/projects/risk-profiler/preview.jpg",
+  "thumbnail": "/images/solutions/risk-profiler/preview.jpg",
   "overview": {
     "problem": "Insurance fraud costs the industry billions annually, but identifying fraudulent claims requires experienced investigators and is often inconsistent. Traditional rule-based systems miss complex fraud patterns and lack transparency in their decisions.",
     "solution": "Risk Profiler uses an AutoGluon ensemble model trained on real insurance claim data to predict fraud probability, with SHAP explainability showing exactly which factors drive each prediction and LLM-generated natural language summaries for non-technical reviewers.",
@@ -49,5 +49,5 @@
     "methodology": "AutoGluon ensemble training with automatic model selection and hyperparameter tuning. Binary classification with 0.65 probability threshold. SHAP KernelExplainer with 100 background samples for per-instance explanations. Top 10 features ranked by global SHAP importance.",
     "metrics": "Top features by SHAP importance: annual income (1.0), age of driver (0.91), claim day of week (0.61). Model evaluated on holdout test set."
   },
-  "previews": ["/images/projects/risk-profiler/preview-1.png"]
+  "previews": ["/images/solutions/risk-profiler/preview-1.png"]
 }

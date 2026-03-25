@@ -19,7 +19,7 @@ export function Footer() {
             </div>
             <p className="mb-4 text-sm leading-relaxed text-text-secondary">
               AI-powered insurance solutions built by {COMPANY_NAME}. From claim processing to
-              forecasting, we turn proof-of-concepts into production systems.
+              forecasting, we turn solutions into production systems.
             </p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
