@@ -22,8 +22,8 @@ export function ProjectHeader({ project }: { project: Project }) {
             Home
           </Link>
           <span>/</span>
-          <Link href="/#projects" className="transition-colors hover:text-foreground">
-            Projects
+          <Link href="/#solutions" className="transition-colors hover:text-foreground">
+            Solutions
           </Link>
           <span>/</span>
           <span className="text-foreground">{project.name}</span>

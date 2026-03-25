@@ -13,8 +13,8 @@ export function DemoCTA({ project }: { project: Project }) {
           <Button href={project.demoUrl} target="_blank" rel="noopener noreferrer">
             Open Live Demo
           </Button>
-          <Button href="/#projects" variant="secondary">
-            View All Projects
+          <Button href="/#solutions" variant="secondary">
+            View All Solutions
           </Button>
         </div>
       </div>

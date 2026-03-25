@@ -19,7 +19,7 @@ export function Hero() {
           below.
         </p>
         <div className="animate-fade-in-up animation-delay-300 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="#projects">Explore Projects</Button>
+          <Button href="#solutions">Explore Solutions</Button>
           <Button href="#contact" variant="secondary">
             Get in Touch
           </Button>
