@@ -8,7 +8,7 @@ export function ProjectGrid() {
     <section id="projects" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Projects</h2>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Solutions</h2>
           <p className="mx-auto max-w-2xl text-text-secondary">
             Production-ready proof-of-concepts demonstrating our insurance AI capabilities. Each
             project includes a live demo you can try.

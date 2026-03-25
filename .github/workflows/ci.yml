@@ -9,10 +9,6 @@ on:
     branches:
       - main
 
-env:
-  GREEN: '\033[0;32m'
-  NO_COLOR: '\033[0m'
-
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
@@ -53,9 +49,7 @@ jobs:
         run: pnpm lint
 
       - name: Build
-        run: |
-          pnpm build
-          echo -e "${GREEN}Job completed successfully${NO_COLOR}"
+        run: pnpm build
 
   docker:
     runs-on: ubuntu-latest
@@ -66,6 +60,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build image
-        run: |
-          docker build -t insurtech-intelligence .
-          echo -e "${GREEN}Job completed successfully${NO_COLOR}"
+        run: docker build -t insurtech-intelligence .

@@ -41,7 +41,7 @@ An end-to-end ML system for **predicting annual insurance charges** with per-pre
 
 ### InsureCast
 
-**Time-series models applied to insurance data** for predictive analytics and risk forecasting.
+A workers' compensation forecasting dashboard for **predicting claims volume and cost**, helping insurers plan reserves, pricing, and operations. Uses SARIMAX time-series models with scenario analysis and segmentation across states, industries, and claim types.
 
 **Stack:** Python, TypeScript | FastAPI, Next.js
 
