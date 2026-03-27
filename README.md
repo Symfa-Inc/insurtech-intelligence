@@ -11,7 +11,7 @@
 
 Showcase platform for AI and ML solutions in insurance, featuring Claim Assistant, Fraud Detection, Insurance Pricing, and InsureCast.
 
-**[Live Demo](https://insurtech-intelligence.symfa.ai/)** · **[GitHub](https://github.com/Symfa-Inc/insurtech-intelligence)** · **[Confluence](https://symfa.atlassian.net/wiki/spaces/SYMFA/pages/5012094984)**
+**[Live Demo](https://insurtech-intelligence.symfa.ai/)** · **[GitHub](https://github.com/Symfa-Inc/insurtech-intelligence)** · **[Confluence](https://symfa.atlassian.net/wiki/x/CIC_KgE)**
 
 </div>
 
