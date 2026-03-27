@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/logo.png" width="150" alt="InsurTech Intelligence Logo" />
+<img src="public/logo.png" width="150" alt="InsurTech Intelligence Logo">
 
 # InsurTech Intelligence
 
@@ -9,62 +9,49 @@
 [![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8.svg)](https://tailwindcss.com/)
 
-**A showcase platform for AI and ML solutions in insurance**
+Showcase platform for AI and ML solutions in insurance, featuring Claim Assistant, Fraud Detection, Insurance Pricing, and InsureCast.
 
-🔗 **Live Demo**: [https://insurtech-intelligence.symfa.ai/](https://insurtech-intelligence.symfa.ai)
-
-💻 **GitHub**: [https://github.com/Symfa-Inc/insurtech-intelligence](https://github.com/Symfa-Inc/insurtech-intelligence)
-
-📘 **Confluence**: [https://symfa.atlassian.net/wiki/spaces/SYMFA/pages/5012094984](https://symfa.atlassian.net/wiki/spaces/SYMFA/pages/5012094984)
+**[Live Demo](https://insurtech-intelligence.symfa.ai/)** · **[GitHub](https://github.com/Symfa-Inc/insurtech-intelligence)** · **[Confluence](https://symfa.atlassian.net/wiki/spaces/SYMFA/pages/5012094984)**
 
 </div>
 
-## Solutions
+## Features
 
-### Claim Assistant
+- **Solution Showcase** – Dedicated pages for each AI/ML insurance solution with overview, models, tech stack, and live demo links
+- **Interactive Navigation** – Dynamic routing for solution detail pages with rich structured content
+- **Dark/Light Theme** – Built-in theme toggle with system preference detection
+- **Responsive Design** – Mobile-friendly layout with collapsible navigation
 
-An AI-powered solution for **automating insurance claim intake and processing**, reducing manual effort and accelerating claim handling. Combines Azure Document Intelligence with OpenAI for field extraction, mapping, and validation.
+## How It Works
 
-**Stack:** Python, TypeScript | Azure DI, OpenAI, FastAPI, React
+InsurTech Intelligence is a static Next.js site that serves as the entry point for Symfa's insurance AI solutions. Each solution (Claim Assistant, Fraud Detection, Insurance Pricing, InsureCast) has its own detail page generated from structured JSON data files. The site is statically exported at build time and served via Nginx, requiring no backend or database.
 
-### Fraud Detection
+## Tech Stack
 
-An AI-powered solution for **identifying potentially fraudulent insurance claims**, helping claims analysts prioritize investigations and reduce financial losses. Uses AutoGluon with SHAP explainability and optional LLM summaries.
-
-**Stack:** Python, TypeScript | AutoGluon, SHAP, OpenAI, FastAPI, Next.js
-
-### Insurance Pricing
-
-An end-to-end ML system for **predicting annual insurance charges** with per-prediction explainability and business-readable evaluation reports. Features SHAP-based local explanations and LLM-interpreted evaluation metrics.
-
-**Stack:** Python, TypeScript | AutoGluon, SHAP, OpenAI, FastAPI, Next.js
-
-### InsureCast
-
-A workers' compensation forecasting dashboard for **predicting claims volume and cost**, helping insurers plan reserves, pricing, and operations. Uses SARIMAX time-series models with scenario analysis and segmentation across states, industries, and claim types.
-
-**Stack:** Python, TypeScript | FastAPI, Next.js
+| Category           | Technologies                                     |
+| ------------------ | ------------------------------------------------ |
+| Framework          | Next.js 16 (App Router)                          |
+| Language           | TypeScript                                       |
+| UI                 | React 19, Tailwind CSS 4                         |
+| Linting            | ESLint 9, Prettier                               |
+| Package Management | pnpm                                             |
+| Deployment         | Docker, GitHub Actions, Google Artifact Registry |
 
 ## Getting Started
+
+### Prerequisites
+
+- Node.js 22+ / [pnpm](https://pnpm.io/)
+
+### Installation & Running
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Running with Docker
+## License
 
-```bash
-docker build -t insurtech-intelligence .
-docker run -p 3000:3000 insurtech-intelligence
-```
-
-## Tech Stack
-
-- **Framework:** [Next.js](https://nextjs.org) 16 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS 4
-- **Linting:** ESLint 9 + Prettier
-- **Package Manager:** pnpm
+[MIT](LICENSE)

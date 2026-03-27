@@ -34,6 +34,9 @@ export function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
+                  {...(link.href.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   className="flex items-center gap-2 transition-colors hover:text-foreground"
                 >
                   <svg

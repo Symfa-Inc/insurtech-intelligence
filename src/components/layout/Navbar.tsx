@@ -17,6 +17,9 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              {...(link.href.startsWith('http')
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
               className="hidden text-sm text-text-secondary transition-colors hover:text-foreground md:block"
             >
               {link.label}
