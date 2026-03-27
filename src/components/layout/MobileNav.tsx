@@ -58,6 +58,9 @@ export function MobileNav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
+                {...(link.href.startsWith('http')
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
                 className="flex items-center justify-center rounded-lg px-3 py-3 text-sm text-text-secondary transition-colors hover:bg-surface hover:text-foreground"
               >
                 {link.label}

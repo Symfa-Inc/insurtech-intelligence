@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL } from '@/lib/constants';
+import { CONTACT_URL } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 
 export function ContactCTA() {
@@ -10,7 +10,9 @@ export function ContactCTA() {
           These solutions showcase what&apos;s possible. We adapt and customize these AI and ML
           models to fit your specific insurance workflows, data, and business requirements.
         </p>
-        <Button href={`mailto:${CONTACT_EMAIL}`}>Contact Us</Button>
+        <Button href={CONTACT_URL} target="_blank" rel="noopener noreferrer">
+          Contact Us
+        </Button>
       </div>
     </section>
   );
