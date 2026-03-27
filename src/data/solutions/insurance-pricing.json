@@ -3,7 +3,7 @@
   "name": "Insurance Pricing",
   "shortDescription": "Predictive pricing model that estimates annual insurance charges with transparent SHAP explanations and LLM-powered interpretation of each prediction.",
   "tags": ["Regression", "AutoML", "Explainable AI", "SHAP"],
-  "demoUrl": "https://insurance-pricing.ai.symfa.com/",
+  "demoUrl": "https://insurance-pricing.symfa.ai/",
   "thumbnail": "/images/solutions/insurance-pricing/preview.jpg",
   "overview": {
     "problem": "Insurance pricing requires balancing actuarial accuracy with customer transparency. Traditional black-box models produce estimates without explaining why, making it difficult for both underwriters and customers to understand pricing decisions.",
