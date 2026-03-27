@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const title = `${SITE_NAME} | ${COMPANY_NAME}`;
+const title = SITE_NAME;
 const description =
   'Explore AI-powered insurance solutions: claim processing, fraud detection, predictive pricing, and forecasting. Built by Symfa.';
 
