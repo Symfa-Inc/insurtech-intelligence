@@ -15,6 +15,12 @@ Showcase platform for AI and ML solutions in insurance, featuring Claim Assistan
 
 </div>
 
+## Preview
+
+<p align="center">
+<img src=".assets/insurtech-intelligence.png" width="80%" alt="InsurTech Intelligence Preview">
+</p>
+
 ## Features
 
 - **Solution Showcase** – Dedicated pages for each AI/ML insurance solution with overview, models, tech stack, and live demo links
